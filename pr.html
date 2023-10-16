@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pr.css">
+  <title>Practice Coding Questions</title>
+</head>
+<body>
+  <header>
+    <h1>Practice Coding Questions</h1>
+  </header>
+
+  <main>
+    <section class="question">
+      <h2>Question 1</h2>
+
+      <p>Write a function that takes a string as input and returns the reverse of the string.</p>
+
+      <div class="code-editor">
+        <textarea name="code" id="code-editor"></textarea>
+      </div>
+
+      <button type="submit">Run Code</button>
+    </section>
+
+    <section class="output">
+      <h2>Output</h2>
+
+      <pre id="output"></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Practice Coding Questions</p>
+  </footer>
+
+  <script>
+    // This JavaScript code will run the user's code and display the output in the output section.
+
+    const codeEditor = document.querySelector('#code-editor');
+    const output = document.querySelector('#output');
+
+    document.querySelector('button').addEventListener('click', () => {
+      const code = codeEditor.value;
+
+      fetch('/run', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ code })
+      })
+      .then(response => response.json())
+      .then(data => {
+        output.textContent = data.output;
+      });
+    });
+  </script>
+</body>
+</html>

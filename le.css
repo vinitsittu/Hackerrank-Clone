@@ -1,0 +1,33 @@
+body {
+    font-family: sans-serif;
+    background-color: #2f7f36;
+  }
+  
+  header {
+    text-align: center;
+  }
+  
+  main {
+    width: 800px;
+    margin: 0 auto;
+  }
+  
+  .leaderboard {
+    margin-bottom: 20px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 5px;
+  }
+  
+  th {
+    background-color: #001f3f;
+    color: #ffffff;
+  }
+  
